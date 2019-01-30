@@ -1,5 +1,5 @@
 <template lang="pug">
-  el-row
+  el-col(:span="24")
     el-button(type="primary" plain @click="initialState")
       span Quick Connect
     el-row(class="change-title") Change Database
@@ -100,6 +100,7 @@
     display flex
     border-radius 5px
     transition .1s linear
+    word-wrap break-word
 
   .list-item:hover
     cursor pointer
@@ -124,6 +125,9 @@
   .refresh:hover
     color #52ceff
 
+  .main-container
+    display flex
+    flex-direction column
   .container
     height 100vh
     overflow-y auto

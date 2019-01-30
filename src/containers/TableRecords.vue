@@ -1,5 +1,5 @@
 <template lang="pug">
-  el-col(:span="24")
+  el-col(:span="24" class="container")
     RecordListFilter(
       :header="records.header"
       :getKeys="getKeys"
@@ -39,6 +39,7 @@
       :lastEvaluatedKeyIndex="records.lastEvaluatedKeyIndex"
       :filtered="records.filtered"
       :list="tableDataPage"
+      class="footer"
     )
 </template>
 
@@ -96,4 +97,9 @@
 </script>
 
 <style lang="stylus" scoped>
+  .container
+    height 100vh
+  .footer
+    position fixed
+    bottom 0px
 </style>

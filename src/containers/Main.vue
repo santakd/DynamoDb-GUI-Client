@@ -9,7 +9,7 @@
       :submitLocalForm="submitLocalForm"
       :setToDefault="setToDefault"
     )
-    el-col(:span="24" v-if="currentTable")
+    el-col(:span="24" v-if="currentTable" class="table-page")
       el-tabs(v-if="currentTable" v-model="activeTab" type="card")
         el-tab-pane(label="Records" name="records")
           TableRecords
@@ -66,8 +66,5 @@
     justify-content center
     height 100vh
     margin auto
-    margin-left -2px
-
-  .something
-    background red
+    background #222933
 </style>

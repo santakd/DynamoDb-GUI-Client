@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container
+  .databases-sidebar
     el-row(class="title") FAVORITES
     .list-item(
       v-for="(db, index) in databaseList"
@@ -36,6 +36,8 @@
 </script>
 
 <style lang="stylus" scoped>
+  .databases-sidebar
+    width 100%
   .title
     font-size .9em
     padding 10px
@@ -56,6 +58,7 @@
     color #eee
     min-width 130px
     border-radius 5px
+    word-wrap break-word
 
   .list-item:hover
     cursor pointer

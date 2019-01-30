@@ -1,16 +1,11 @@
 <template lang="pug">
   #app
-    rs-panes(
-      split-to="columns"
-      :allow-resize="true"
-      :max-size="500"
-      :min-size="150"
-      :size="150"
-      resizerColor="#121820"
-      :resizerBorderThickness="1"
-      )
-      Sidebar(class="sidebar" slot="firstPane")
-      Main(class="main" slot="secondPane")
+    multipane(class="multipane-container" layout="vertical")
+      div(:style="{width: '150px', minWidth: '150px', maxWidth: '30%'}")
+        Sidebar(class="sidebar" slot="firstPane")
+      multipane-resizer
+      div(:style="{flexGrow: 1}")
+        Main(class="main" slot="secondPane")
     TableModals
     RecordModals
 </template>
@@ -66,6 +61,9 @@
     display flex
     width 100%
 
+  .multipane-container
+    display flex
+    width 100%
   // customizing some imported components and theme selectors
   input[type='text']:disabled
     color #aaa !important
@@ -87,6 +85,9 @@
 
   .el-input__inner
     background-color #2c323a !important
+
+  .el-tabs__content
+    height 100vh
 
   .el-tag
     background #121820 !important
@@ -134,6 +135,12 @@
     color #fff !important
     background #191d25 !important
     border 1px solid #191d25 !important
+
+  .multipane-resizer
+    border-left 2px solid #12181F
+    left 0px !important
+    margin-left 0px !important
+    width 2px !important
 
   .jsoneditor-string
     color #46b7ff !important

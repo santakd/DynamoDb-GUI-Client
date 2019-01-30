@@ -1,4 +1,5 @@
 import Vue from "vue";
-import ResSplitPane from "vue-resize-split-pane";
+import { Multipane, MultipaneResizer } from "vue-multipane";
 
-Vue.component("rs-panes", ResSplitPane);
+Vue.component("multipane", Multipane);
+Vue.component("multipane-resizer", MultipaneResizer);

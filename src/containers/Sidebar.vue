@@ -61,7 +61,5 @@
 
 <style lang="stylus" scoped>
   .sidebar
-    height 100vh
-    width 100%
-    min-width 150px
+    display flex
 </style>

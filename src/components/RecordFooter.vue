@@ -1,5 +1,5 @@
 <template lang="pug">
-  el-col(:span="24" class="container")
+  el-row(class="footer")
     el-col(:span="14")
       i(class="el-icon-circle-plus-outline add" @click="generateMeta" title="Add Record")
       i(class="el-icon-refresh refresh" @click="refreshTable" title="Refresh Table")
@@ -30,7 +30,7 @@
         @click="(lastEvaluatedKeyIndex + 1) * limit < itemCount && evaluatedKeys.length > 0 && getNextRecords()"
         )
       .filter-result(v-if="filtered") {{list.length}} matches in {{ limit * lastEvaluatedKeyIndex + 1 }} - {{ (lastEvaluatedKeyIndex + 1) * limit > itemCount ? itemCount : (lastEvaluatedKeyIndex + 1) * limit}} range
-    el-col(:span="6" class="itemCount") {{itemCount ? itemCount : 0}} rows in {{currentTable}}
+    el-col(:span="10" class="itemCount") {{itemCount ? itemCount : 0}} rows in {{currentTable}}
 </template>
 
 <script lang="ts">
@@ -72,10 +72,10 @@
     display flex
     justify-content flex-end
 
-  .container
-    position fixed
-    height 30px
-    bottom 0
+  .footer
+    display flex
+    width 100%
+    align-items center
     background #121820
     z-index 1000
 
@@ -112,7 +112,7 @@
 
   .itemCount
     justify-content flex-end
-
+    margin-right 5px
   .disabled
     color #aaaaaa
     cursor not-allowed !important
